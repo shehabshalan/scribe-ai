@@ -19,7 +19,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 
-import { tasks, Task } from "../data/tasks";
+import { Task } from "../data/tasks";
 
 interface TaskSelectorProps extends PopoverProps {
   tasks: Task[];
