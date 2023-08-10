@@ -1,7 +1,5 @@
 # Scribe AI - AI-Powered Content Creation Tool
 
-![Scribe AI Logo](/path/to/logo.png)
-
 Scribe AI is an AI-powered content creation tool designed to assist writers, bloggers, and marketers in crafting high-quality, engaging, and error-free content. Powered by state-of-the-art GPT models, Scribe AI offers a range of powerful features to enhance your content creation process.
 
 ## Features
