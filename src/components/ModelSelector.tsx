@@ -32,11 +32,18 @@ import { Model, ModelType } from "../data/models";
 interface ModelSelectorProps extends PopoverProps {
   types: readonly ModelType[];
   models: Model[];
+  setSelectedModel: (model: Model) => void;
+  selectedModel: Model;
 }
 
-export function ModelSelector({ models, types, ...props }: ModelSelectorProps) {
+export function ModelSelector({
+  models,
+  types,
+  setSelectedModel,
+  selectedModel,
+  ...props
+}: ModelSelectorProps) {
   const [open, setOpen] = React.useState(false);
-  const [selectedModel, setSelectedModel] = React.useState<Model>(models[0]);
   const [peekedModel, setPeekedModel] = React.useState<Model>(models[0]);
 
   return (
@@ -48,7 +55,7 @@ export function ModelSelector({ models, types, ...props }: ModelSelectorProps) {
         <HoverCardContent
           align="start"
           className="w-[260px] text-sm"
-          side="left"
+          side="top"
         >
           The model which will generate the completion. Some models are suitable
           for natural language tasks, others specialize in code. Learn more.
