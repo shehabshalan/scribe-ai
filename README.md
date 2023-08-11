@@ -4,15 +4,9 @@ Scribe AI is an AI-powered content creation tool designed to assist writers, blo
 
 ## Features
 
-- **Content Ideation and Generation:** Generate creative and relevant ideas for your blog posts and content.
-  ## TODO
-  
-- **Grammar and Style Check:** Ensure your content is error-free and professionally written with accurate grammar and style.
-- **SEO Optimization:** Optimize your content for search engines with intelligent keyword suggestions and meta descriptions.
-- **Readability Enhancement:** Improve content readability by refining sentence structure and coherence.
-- **Visual Enhancements:** Receive suggestions for multimedia elements like images and videos to enrich your content.
-- **Summarization and Abstracts:** Generate concise summaries or abstracts of longer content pieces.
-- **Social Media Teasers:** Craft attention-grabbing snippets for social media sharing.
+- **Content Ideation and Generation:** Generate creative and relevant ideas for your blog posts and content.  
+- **Copy Editor / Proofreader:** Proofread and edit blog posts before publication. Ensure all-around consistency (style and tone).
+- **SEO Specialist:** Optimize your content for search engines with intelligent keyword suggestions and meta descriptions.
 
 ## Getting Started
 
