@@ -11,13 +11,15 @@ type CallBotParams = {
   modelName?: string;
   temperature?: number;
   maxTokens?: number;
+  key?: string;
 };
 
 export const callBot = ({
   systemTemplate,
   modelName = "gpt-3.5-turbo",
   temperature = 0,
-  maxTokens = 150,
+  maxTokens = 256,
+  key,
 }: CallBotParams) => {
   const systemMessagePrompt =
     SystemMessagePromptTemplate.fromTemplate(systemTemplate);
@@ -32,7 +34,7 @@ export const callBot = ({
   ]);
 
   const chat = new ChatOpenAI({
-    openAIApiKey: import.meta.env.VITE_OPENAI_API_KEY,
+    openAIApiKey: key,
     modelName,
     temperature,
     maxTokens,
