@@ -23,12 +23,17 @@ import { Task } from "../data/tasks";
 
 interface TaskSelectorProps extends PopoverProps {
   tasks: Task[];
+  setSelectedTask: (task: Task) => void;
+  selectedTask: Task;
 }
 
-export function TaskSelector({ tasks, ...props }: TaskSelectorProps) {
+export function TaskSelector({
+  tasks,
+  setSelectedTask,
+  selectedTask,
+  ...props
+}: TaskSelectorProps) {
   const [open, setOpen] = React.useState(false);
-  const [selectedTask, setSelectedTask] = React.useState<Task>();
-  //   const router = useRouter();
 
   return (
     <Popover open={open} onOpenChange={setOpen} {...props}>
