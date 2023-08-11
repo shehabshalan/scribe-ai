@@ -16,7 +16,7 @@ import { ModeToggle } from "../components/ModeToggle";
 import ResponseArea from "@/components/ResponseArea";
 import { callBot } from "@/lib/llm";
 import { getTemplate } from "@/lib/templates";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import OpenAIKey from "@/components/OpenAIKey";
 import { ButtonLoading } from "@/components/LoadingButton";
 type Metadata = {
@@ -39,8 +39,16 @@ const Home = () => {
   const [query, setQuery] = useState<string>("");
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
+  useEffect(() => {
+    const localApiKey = localStorage.getItem("openai-key");
+    if (localApiKey) {
+      setApiKey(localApiKey);
+    } else {
+      localStorage.setItem("openai-key", apiKey);
+    }
+  }, []);
+
   const handleSubmit = async () => {
-    setIsSubmitting(true);
     if (!apiKey) {
       alert("Please enter your OpenAI API key");
       return;
@@ -82,6 +90,7 @@ const Home = () => {
     });
 
     try {
+      setIsSubmitting(true);
       const response = await myBot(query);
       setResponse(response.text);
       setIsSubmitting(false);
@@ -143,7 +152,10 @@ const Home = () => {
                       value={query}
                       onChange={(e) => setQuery(e.target.value)}
                     />
-                    {response && <ResponseArea response={response} />}
+                    {response && !isSubmitting && (
+                      <ResponseArea response={response} />
+                    )}
+
                     <div className="flex items-center space-x-2">
                       {isSubmitting ? (
                         <ButtonLoading />
