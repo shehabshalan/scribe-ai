@@ -25,7 +25,7 @@ export const getTemplate = (task: Task) => {
       return CONTENT_WRITER_TEMPLATE;
     case "copy-editor-proofreader":
       return COPY_EDITOR_TEMPLATE;
-    case "SEO Specialist":
+    case "seo-specialist":
       return SEO_SPECIALIST_TEMPLATE;
     default:
       return "";
